@@ -20,10 +20,13 @@ FF
 
         RoverSystemScanner scanner = RoverSystemScanner.from(text);
         Navigator navigator = Navigator.create();
+
         Coordinate bottomLeftPlateauCoordinate = new Coordinate(0,0);
         Coordinate topRightPlateauCoordinate = scanner.scanCoordinate();
+
         Boundary boundary = new Plateau(bottomLeftPlateauCoordinate, topRightPlateauCoordinate);
         CommandCreator commandCreator = new CommandCreator();
+
         RoverSystemParser roverSystemParser = new RoverSystemParser(scanner, navigator, boundary, commandCreator);
         RoverSystem system = roverSystemParser.parse();
         system.execute();
