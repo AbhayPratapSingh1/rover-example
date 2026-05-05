@@ -18,6 +18,8 @@ class RoverSystemScannerTest {
         assertEquals("1", scanner.peek());
         assertEquals(1, scanner.scanNumber());
         assertEquals(new Coordinate(2, 0), coordinateScanner.scanCoordinate());
+
+
         assertEquals(Direction.N, directionScanner.scanDirection());
         assertEquals("X", consumeScanner.consume());
         assertNull(consumeScanner.consume());
